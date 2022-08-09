@@ -32,6 +32,15 @@ try:
     st.write(f"過去{days}日の株価です")
     @st.cache
     def get_data(days,tickers):
+        """_summary_
+
+        Args:
+            days (_type_): 表示日数
+            tickers (_type_): 株価コードの種類
+
+        Returns:
+            _type_: 結合されたデータフレーム
+        """
         df = pd.DataFrame()
         for company in tickers.keys():
             tkr = yf.Ticker(tickers[company])
@@ -72,5 +81,3 @@ except:
     st.error(
         "error is corror"
     )
-    
-
